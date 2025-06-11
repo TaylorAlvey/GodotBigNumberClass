@@ -201,9 +201,6 @@ static func normalize(big: Big) -> void:
             if div > MANTISSA_PRECISION:
                 big.mantissa /= div
                 big.exponent += diff
-    while big.exponent < 0:
-        big.mantissa *= 0.1
-        big.exponent += 1
     while big.mantissa >= 10.0:
         big.mantissa *= 0.1
         big.exponent += 1
